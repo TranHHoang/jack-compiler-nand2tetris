@@ -1,0 +1,727 @@
+	Thu Dec 17 17:38 2020 Time and Allocation Profiling Report  (Final)
+
+	   jack-compiler-exe.EXE +RTS -N -p -RTS
+
+	total time  =        0.05 secs   (195 ticks @ 1000 us, 8 processors)
+	total alloc = 200,965,088 bytes  (excludes profiling overheads)
+
+COST CENTRE               MODULE                     SRC                                           %time %alloc
+
+<*                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50           13.8   10.4
+main                      Main                       app\Main.hs:(9,1)-(15,41)                      10.3    0.5
+parseA'.letter            Assembler                  src\Assembler.hs:183:5-55                       8.2    6.8
+return                    Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:193:3-15            8.2    6.8
+>>=                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16            5.6    7.9
+<|>                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16            5.6    5.6
+compile.folder            Assembler                  src\Assembler.hs:(251,5)-(256,61)               5.1    5.6
+takeWhile_                Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:275:3-21              5.1    9.2
+parseC'.go                Assembler                  src\Assembler.hs:(192,5)-(196,34)               4.6    1.7
+compileC                  Assembler                  src\Assembler.hs:(231,1)-(235,59)               4.6   10.6
+to16BinString             Assembler                  src\Assembler.hs:(174,1)-(177,56)               3.1    3.8
+collectLabel.folder       Assembler                  src\Assembler.hs:(136,5)-(139,14)               3.1    2.6
+runParsecT.cok            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:593:5-51            2.6    0.7
+take1_                    Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:270:3-19              2.6    4.3
+parseA'.(...)             Assembler                  src\Assembler.hs:180:17-102                     1.5    0.9
+runParsecT                Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:(591,1)-(596,56)    1.5    1.7
+to16BinString.digitToChar Assembler                  src\Assembler.hs:176:5-53                       1.0    0.2
+parseA'                   Assembler                  src\Assembler.hs:(180,1)-(183,55)               1.0    0.0
+compileA                  Assembler                  src\Assembler.hs:(218,1)-(228,58)               1.0    0.5
+compile.src               Assembler                  src\Assembler.hs:250:5-34                       1.0    4.1
+compile.folder.res        Assembler                  src\Assembler.hs:255:15-103                     1.0    2.1
+compile                   Assembler                  src\Assembler.hs:(238,1)-(256,61)               1.0    1.6
+canonicalize.shouldIgnore Assembler                  src\Assembler.hs:131:5-56                       1.0    2.4
+runParser'                Text.Megaparsec            Text\Megaparsec.hs:236:1-42                     1.0    0.9
+runParser                 Text.Megaparsec            Text\Megaparsec.hs:223:1-61                     1.0    1.4
+to16BinString.padZero16.\ Assembler                  src\Assembler.hs:177:23-56                      0.5    3.3
+canonicalize              Assembler                  src\Assembler.hs:(128,1)-(131,56)               0.5    1.0
+decimal                   Text.Megaparsec.Char.Lexer Text\Megaparsec\Char\Lexer.hs:336:1-32          0.5    1.4
+
+
+                                                                                                                                    individual      inherited
+COST CENTRE                        MODULE                     SRC                                               no.      entries  %time %alloc   %time %alloc
+
+MAIN                               MAIN                       <built-in>                                        1059          0    0.0    0.0   100.0  100.0
+ CAF                               GHC.IO.FD                  <entire-module>                                   2109          0    0.0    0.0     0.0    0.0
+ CAF                               GHC.Conc.Windows           <entire-module>                                   2090          0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.Handle.Internals    <entire-module>                                   2048          0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.Handle.FD           <entire-module>                                   2047          0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.Exception           <entire-module>                                   2045          0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.Encoding.CodePage   <entire-module>                                   2038          0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.Encoding            <entire-module>                                   2037          0    0.0    0.0     0.0    0.0
+ CAF                               Data.Text.Internal         <entire-module>                                   1936          0    0.0    0.0     0.0    0.0
+ CAF                               Data.Text.IO               <entire-module>                                   1935          0    0.0    0.0     0.0    0.0
+ CAF                               Data.Text.Array            <entire-module>                                   1932          0    0.0    0.0     0.0    0.0
+ CAF                               Data.Text                  <entire-module>                                   1931          0    0.0    0.0     0.0    0.0
+ CAF:$fAlternativeParsecT_$cfmap   Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:153:3-6               1390          0    0.0    0.0     0.0    0.0
+  fmap                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:153:3-13              2183          1    0.0    0.0     0.0    0.0
+ CAF:$fStreamText5                 Text.Megaparsec.Stream     <no location info>                                1475          0    0.0    0.0     0.0    0.0
+  takeWhile_                       Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:275:3-21                2204          1    0.0    0.0     0.0    0.0
+ CAF:$fStreamText7                 Text.Megaparsec.Stream     <no location info>                                1477          0    0.0    0.0     0.0    0.0
+  take1_                           Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:270:3-19                2156          1    0.0    0.0     0.0    0.0
+ CAF:$sdecimal1                    Assembler                  <no location info>                                1168          0    0.0    0.0     0.0    0.0
+  decimal                          Text.Megaparsec.Char.Lexer Text\Megaparsec\Char\Lexer.hs:336:1-32            2197          1    0.0    0.0     0.0    0.0
+   label                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:308:3-28              2198          1    0.0    0.0     0.0    0.0
+ CAF:$sdecimal18                   Assembler                  <no location info>                                1148          0    0.0    0.0     0.0    0.0
+  decimal                          Text.Megaparsec.Char.Lexer Text\Megaparsec\Char\Lexer.hs:336:1-32            2583          0    0.0    0.0     0.0    0.0
+   chunkToTokens                   Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:267:3-32                2584          1    0.0    0.0     0.0    0.0
+ CAF:$sdecimal8                    Assembler                  <no location info>                                1165          0    0.0    0.0     0.0    0.0
+  decimal                          Text.Megaparsec.Char.Lexer Text\Megaparsec\Char\Lexer.hs:336:1-32            2202          0    0.0    0.0     0.0    0.0
+   takeWhile1P                     Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:318:3-34              2203          1    0.0    0.0     0.0    0.0
+ CAF:$sdecimal_p                   Assembler                  <no location info>                                1166          0    0.0    0.0     0.0    0.0
+  decimal                          Text.Megaparsec.Char.Lexer Text\Megaparsec\Char\Lexer.hs:336:1-32            2201          0    0.0    0.0     0.0    0.0
+ CAF:canonicalize                  Assembler                  src\Assembler.hs:128:1-12                         1146          0    0.0    0.0     0.0    0.0
+  canonicalize                     Assembler                  src\Assembler.hs:(128,1)-(131,56)                 2124          1    0.0    0.0     0.0    0.0
+ CAF:cinsCodes10_rhM2              Assembler                  <no location info>                                1120          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2622          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2623          0    0.0    0.0     0.0    0.0
+ CAF:cinsCodes11_rhM3              Assembler                  <no location info>                                1121          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2620          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2621          0    0.0    0.0     0.0    0.0
+ CAF:cinsCodes12_rhM4              Assembler                  <no location info>                                1122          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2607          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2608          0    0.0    0.0     0.0    0.0
+ CAF:cinsCodes13_rhM5              Assembler                  <no location info>                                1123          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2624          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2625          0    0.0    0.0     0.0    0.0
+ CAF:cinsCodes15_rhM7              Assembler                  <no location info>                                1125          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2611          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2612          0    0.0    0.0     0.0    0.0
+ CAF:cinsCodes16_rhM8              Assembler                  <no location info>                                1126          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2633          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2634          0    0.0    0.0     0.0    0.0
+ CAF:cinsCodes17_rhM9              Assembler                  <no location info>                                1127          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2635          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2636          0    0.0    0.0     0.0    0.0
+ CAF:cinsCodes1_rhLT               Assembler                  <no location info>                                1111          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2631          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2632          0    0.0    0.0     0.0    0.0
+ CAF:cinsCodes2_rhLU               Assembler                  <no location info>                                1112          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2614          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2615          0    0.0    0.0     0.0    0.0
+ CAF:cinsCodes35_rhMr              Assembler                  src\Assembler.hs:80:5-13                          1128          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2593          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2594          1    0.0    0.0     0.0    0.0
+ CAF:cinsCodes3_rhLV               Assembler                  <no location info>                                1113          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2600          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2601          0    0.0    0.0     0.0    0.0
+ CAF:cinsCodes4_rhLW               Assembler                  <no location info>                                1114          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2595          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2596          0    0.0    0.0     0.0    0.0
+ CAF:cinsCodes6_rhLY               Assembler                  <no location info>                                1116          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2628          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2629          0    0.0    0.0     0.0    0.0
+ CAF:cinsCodes9_rhM1               Assembler                  <no location info>                                1119          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2618          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2619          0    0.0    0.0     0.0    0.0
+ CAF:cinsCodes_rhLS                Assembler                  <no location info>                                1110          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2603          0    0.0    0.0     0.0    0.0
+   compCodes.cinsCodes             Assembler                  src\Assembler.hs:(80,5)-(99,7)                    2604          0    0.0    0.0     0.0    0.0
+ CAF:compCodes_r4xw                Assembler                  src\Assembler.hs:49:1-9                           1223          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2370          1    0.0    0.0     0.0    0.0
+   compCodes.\                     Assembler                  src\Assembler.hs:49:45-96                         2372         27    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2371          1    0.0    0.0     0.0    0.0
+ CAF:compile101                    Assembler                  <no location info>                                1231          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2535          0    0.0    0.0     0.0    0.0
+ CAF:compile105                    Assembler                  <no location info>                                1230          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2534          0    0.0    0.0     0.0    0.0
+ CAF:compile109                    Assembler                  <no location info>                                1229          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2533          0    0.0    0.0     0.0    0.0
+ CAF:compile112                    Assembler                  <no location info>                                1228          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2532          0    0.0    0.0     0.0    0.0
+ CAF:compile115                    Assembler                  <no location info>                                1227          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2531          0    0.0    0.0     0.0    0.0
+ CAF:compile118                    Assembler                  <no location info>                                1226          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2530          0    0.0    0.0     0.0    0.0
+ CAF:compile121                    Assembler                  <no location info>                                1225          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2529          0    0.0    0.0     0.0    0.0
+ CAF:compile124                    Assembler                  <no location info>                                1224          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2528          0    0.0    0.0     0.0    0.0
+ CAF:compile31                     Assembler                  <no location info>                                1249          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2553          0    0.0    0.0     0.0    0.0
+ CAF:compile35                     Assembler                  <no location info>                                1248          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2552          0    0.0    0.0     0.0    0.0
+ CAF:compile39                     Assembler                  <no location info>                                1247          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2551          0    0.0    0.0     0.0    0.0
+ CAF:compile42                     Assembler                  <no location info>                                1246          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2550          0    0.0    0.0     0.0    0.0
+ CAF:compile46                     Assembler                  <no location info>                                1245          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2549          0    0.0    0.0     0.0    0.0
+ CAF:compile50                     Assembler                  <no location info>                                1244          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2548          0    0.0    0.0     0.0    0.0
+ CAF:compile54                     Assembler                  <no location info>                                1243          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2547          0    0.0    0.0     0.0    0.0
+ CAF:compile57                     Assembler                  <no location info>                                1242          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2546          0    0.0    0.0     0.0    0.0
+ CAF:compile61                     Assembler                  <no location info>                                1241          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2545          0    0.0    0.0     0.0    0.0
+ CAF:compile65                     Assembler                  <no location info>                                1240          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2544          0    0.0    0.0     0.0    0.0
+ CAF:compile69                     Assembler                  <no location info>                                1239          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2543          0    0.0    0.0     0.0    0.0
+ CAF:compile73                     Assembler                  <no location info>                                1238          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2542          0    0.0    0.0     0.0    0.0
+ CAF:compile77                     Assembler                  <no location info>                                1237          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2541          0    0.0    0.0     0.0    0.0
+ CAF:compile81                     Assembler                  <no location info>                                1236          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2540          0    0.0    0.0     0.0    0.0
+ CAF:compile85                     Assembler                  <no location info>                                1235          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2539          0    0.0    0.0     0.0    0.0
+ CAF:compile89                     Assembler                  <no location info>                                1234          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2538          0    0.0    0.0     0.0    0.0
+ CAF:compile93                     Assembler                  <no location info>                                1233          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2537          0    0.0    0.0     0.0    0.0
+ CAF:compile97                     Assembler                  <no location info>                                1232          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2536          0    0.0    0.0     0.0    0.0
+ CAF:defaultSymbolTable            Assembler                  src\Assembler.hs:143:1-18                         1250          0    0.0    0.0     0.0    0.0
+  defaultSymbolTable               Assembler                  src\Assembler.hs:(143,1)-(171,5)                  2527          1    0.0    0.0     0.0    0.0
+ CAF:destCodes_r4Af                Assembler                  src\Assembler.hs:102:1-9                          1282          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2362          1    0.0    0.0     0.0    0.0
+ CAF:exit_rhMW                     Assembler                  <no location info>                                1141          0    0.0    0.0     0.0    0.0
+  canonicalize                     Assembler                  src\Assembler.hs:(128,1)-(131,56)                 2132          0    0.0    0.0     0.0    0.0
+   canonicalize.strip              Assembler                  src\Assembler.hs:130:5-42                         2133          0    0.0    0.0     0.0    0.0
+ CAF:g_rhN0                        Assembler                  <no location info>                                1143          0    0.0    0.0     0.0    0.0
+  canonicalize                     Assembler                  src\Assembler.hs:(128,1)-(131,56)                 2136          0    0.0    0.0     0.0    0.0
+   canonicalize.shouldIgnore       Assembler                  src\Assembler.hs:131:5-56                         2137          0    0.0    0.0     0.0    0.0
+ CAF:go2_rhOH                      Assembler                  <no location info>                                1192          0    0.0    0.0     0.0    0.0
+  parseC'                          Assembler                  src\Assembler.hs:(189,1)-(196,34)                 2267          0    0.0    0.0     0.0    0.0
+   parseC'.go                      Assembler                  src\Assembler.hs:(192,5)-(196,34)                 2268          1    0.0    0.0     0.0    0.0
+    >>=                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2269          1    0.0    0.0     0.0    0.0
+ CAF:integer_rhNY                  Assembler                  src\Assembler.hs:182:5-11                         1175          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2184          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2185          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2186          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2187          0    0.0    0.0     0.0    0.0
+      parseA'.integer              Assembler                  src\Assembler.hs:182:5-56                         2188          1    0.0    0.0     0.0    0.0
+       lexeme                      Text.Megaparsec.Lexer      Text\Megaparsec\Lexer.hs:78:1-23                  2189          1    0.0    0.0     0.0    0.0
+        <*                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50              2190          1    0.0    0.0     0.0    0.0
+         >>=                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2191          1    0.0    0.0     0.0    0.0
+ CAF:jumpCodes_r4Ag                Assembler                  src\Assembler.hs:115:1-9                          1266          0    0.0    0.0     0.0    0.0
+  jumpCodes                        Assembler                  src\Assembler.hs:(115,1)-(125,5)                  2427          1    0.0    0.0     0.0    0.0
+ CAF:k1_rhO3                       Assembler                  <no location info>                                1179          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2449          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2450          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2451          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2452          0    0.0    0.0     0.0    0.0
+      parseA'.(...)                Assembler                  src\Assembler.hs:180:17-102                       2453          0    0.0    0.0     0.0    0.0
+ CAF:k2_rhO4                       Assembler                  <no location info>                                1180          0    0.0    0.0     0.0    0.0
+  <|>                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16              2158          1    0.0    0.0     0.0    0.0
+   mplus                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:260:3-15              2159          1    0.0    0.0     0.0    0.0
+ CAF:k_rhO2                        Assembler                  <no location info>                                1178          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2162          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2163          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2164          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2165          0    0.0    0.0     0.0    0.0
+      parseA'.(...)                Assembler                  src\Assembler.hs:180:17-102                       2166          0    0.0    0.0     0.0    0.0
+       try                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:309:3-26              2167          1    0.0    0.0     0.0    0.0
+ CAF:letter_rhNJ                   Assembler                  src\Assembler.hs:183:5-10                         1164          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2454          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2455          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2456          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2457          0    0.0    0.0     0.0    0.0
+      parseA'.letter               Assembler                  src\Assembler.hs:183:5-55                         2458          1    0.0    0.0     0.0    0.0
+ CAF:lvl107_rhN1                   Assembler                  <no location info>                                1144          0    0.0    0.0     0.0    0.0
+  canonicalize                     Assembler                  src\Assembler.hs:(128,1)-(131,56)                 2134          0    0.0    0.0     0.0    0.0
+   canonicalize.shouldIgnore       Assembler                  src\Assembler.hs:131:5-56                         2135          0    0.0    0.0     0.0    0.0
+ CAF:lvl123_rhNp                   Assembler                  <no location info>                                1151          0    0.0    0.0     0.0    0.0
+  parseC'                          Assembler                  src\Assembler.hs:(189,1)-(196,34)                 2292          0    0.0    0.0     0.0    0.0
+   parseC'.go                      Assembler                  src\Assembler.hs:(192,5)-(196,34)                 2293          0    0.0    0.0     0.0    0.0
+    <*                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50              2294          0    0.0    0.0     0.0    0.0
+ CAF:lvl125_rhNs                   Assembler                  <no location info>                                1152          0    0.0    0.0     0.0    0.0
+  token                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:315:3-28              2318          1    0.0    0.0     0.0    0.0
+ CAF:lvl126_rhNt                   Assembler                  <no location info>                                1153          0    0.0    0.0     0.0    0.0
+  parseC'                          Assembler                  src\Assembler.hs:(189,1)-(196,34)                 2316          0    0.0    0.0     0.0    0.0
+   parseC'.go                      Assembler                  src\Assembler.hs:(192,5)-(196,34)                 2317          0    0.0    0.0     0.0    0.0
+ CAF:lvl127_rhNu                   Assembler                  <no location info>                                1154          0    0.0    0.0     0.0    0.0
+  parseC'                          Assembler                  src\Assembler.hs:(189,1)-(196,34)                 2312          0    0.0    0.0     0.0    0.0
+   parseC'.go                      Assembler                  src\Assembler.hs:(192,5)-(196,34)                 2313          0    0.0    0.0     0.0    0.0
+    <|>                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16              2314          1    0.0    0.0     0.0    0.0
+     mplus                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:260:3-15              2315          1    0.0    0.0     0.0    0.0
+ CAF:lvl130_rhNC                   Assembler                  <no location info>                                1160          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2488          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2489          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2490          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2491          0    0.0    0.0     0.0    0.0
+      parseA'.letter               Assembler                  src\Assembler.hs:183:5-55                         2492          0    0.0    0.0     0.0    0.0
+ CAF:lvl131_rhND                   Assembler                  <no location info>                                1161          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2481          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2482          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2483          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2484          0    0.0    0.0     0.0    0.0
+      parseA'.letter               Assembler                  src\Assembler.hs:183:5-55                         2485          0    0.0    0.0     0.0    0.0
+       <|>                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16              2486          1    0.0    0.0     0.0    0.0
+        mplus                      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:260:3-15              2487          1    0.0    0.0     0.0    0.0
+ CAF:lvl133_rhNH                   Assembler                  <no location info>                                1163          0    0.0    0.0     0.0    0.0
+  >>=                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2461          1    0.0    0.0     0.0    0.0
+ CAF:lvl135_rhNN                   Assembler                  <no location info>                                1170          0    0.0    0.0     0.0    0.0
+  takeWhileP                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:317:3-33              2331          1    0.0    0.0     0.0    0.0
+ CAF:lvl143_rhNW                   Assembler                  <no location info>                                1173          0    0.0    0.0     0.0    0.0
+  takeWhileP                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:317:3-33              2214          1    0.0    0.0     0.0    0.0
+ CAF:lvl146_rhO8                   Assembler                  <no location info>                                1182          0    0.0    0.0     0.0    0.0
+  >>=                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2153          1    0.0    0.0     0.0    0.0
+ CAF:lvl15_rhKm                    Assembler                  <no location info>                                1102          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2222          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2223          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2224          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2225          0    0.0    0.0     0.0    0.0
+      parseA'.(...)                Assembler                  src\Assembler.hs:180:17-102                       2226          0    0.0    0.0     0.0    0.0
+       <*                          Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50              2227          0    0.0    0.0     0.0    0.0
+ CAF:lvl160_rhOA                   Assembler                  <no location info>                                1186          0    0.0    0.0     0.0    0.0
+  parseC'                          Assembler                  src\Assembler.hs:(189,1)-(196,34)                 2276          0    0.0    0.0     0.0    0.0
+   parseC'.go                      Assembler                  src\Assembler.hs:(192,5)-(196,34)                 2277          0    0.0    0.0     0.0    0.0
+    try                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:309:3-26              2278          1    0.0    0.0     0.0    0.0
+ CAF:lvl161_rhOB                   Assembler                  <no location info>                                1187          0    0.0    0.0     0.0    0.0
+  parseC'                          Assembler                  src\Assembler.hs:(189,1)-(196,34)                 2556          0    0.0    0.0     0.0    0.0
+   parseC'.go                      Assembler                  src\Assembler.hs:(192,5)-(196,34)                 2557          0    0.0    0.0     0.0    0.0
+    pure                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:163:3-18              2558          1    0.0    0.0     0.0    0.0
+ CAF:lvl162_rhOC                   Assembler                  <no location info>                                1188          0    0.0    0.0     0.0    0.0
+  <|>                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16              2272          1    0.0    0.0     0.0    0.0
+   mplus                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:260:3-15              2273          1    0.0    0.0     0.0    0.0
+ CAF:lvl163_rhOE                   Assembler                  <no location info>                                1190          0    0.0    0.0     0.0    0.0
+  takeWhile1P                      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:318:3-34              2307          1    0.0    0.0     0.0    0.0
+ CAF:lvl164_rhOF                   Assembler                  <no location info>                                1191          0    0.0    0.0     0.0    0.0
+  parseC'                          Assembler                  src\Assembler.hs:(189,1)-(196,34)                 2302          0    0.0    0.0     0.0    0.0
+   parseC'.go                      Assembler                  src\Assembler.hs:(192,5)-(196,34)                 2303          0    0.0    0.0     0.0    0.0
+    <*                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50              2304          1    0.0    0.0     0.0    0.0
+     >>=                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2305          1    0.0    0.0     0.0    0.0
+ CAF:lvl166_rhOI                   Assembler                  <no location info>                                1193          0    0.0    0.0     0.0    0.0
+  parseC'                          Assembler                  src\Assembler.hs:(189,1)-(196,34)                 2338          0    0.0    0.0     0.0    0.0
+   parseMaybe                      Text.Megaparsec            Text\Megaparsec.hs:(191,1)-(194,21)               2339          0    0.0    0.0     0.0    0.0
+    eof                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:314:3-26              2340          1    0.0    0.0     0.0    0.0
+ CAF:lvl167_rhOJ                   Assembler                  <no location info>                                1194          0    0.0    0.0     0.0    0.0
+  parseC'                          Assembler                  src\Assembler.hs:(189,1)-(196,34)                 2260          0    0.0    0.0     0.0    0.0
+   parseMaybe                      Text.Megaparsec            Text\Megaparsec.hs:(191,1)-(194,21)               2261          0    0.0    0.0     0.0    0.0
+    <*                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50              2262          1    0.0    0.0     0.0    0.0
+     >>=                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2263          1    0.0    0.0     0.0    0.0
+ CAF:lvl17_rhKq                    Assembler                  <no location info>                                1104          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2502          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2503          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2504          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2505          0    0.0    0.0     0.0    0.0
+      parseA'.letter               Assembler                  src\Assembler.hs:183:5-55                         2506          0    0.0    0.0     0.0    0.0
+       pure                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:163:3-18              2507          1    0.0    0.0     0.0    0.0
+ CAF:lvl180_rhP6                   Assembler                  <no location info>                                1196          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2373          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2374          0    0.0    0.0     0.0    0.0
+ CAF:lvl182_rhP8                   Assembler                  <no location info>                                1197          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2375          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2376          0    0.0    0.0     0.0    0.0
+ CAF:lvl184_rhPa                   Assembler                  <no location info>                                1198          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2377          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2378          0    0.0    0.0     0.0    0.0
+ CAF:lvl186_rhPc                   Assembler                  <no location info>                                1199          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2379          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2380          0    0.0    0.0     0.0    0.0
+ CAF:lvl188_rhPe                   Assembler                  <no location info>                                1200          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2381          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2382          0    0.0    0.0     0.0    0.0
+ CAF:lvl190_rhPg                   Assembler                  <no location info>                                1201          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2383          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2384          0    0.0    0.0     0.0    0.0
+ CAF:lvl192_rhPi                   Assembler                  <no location info>                                1202          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2385          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2386          0    0.0    0.0     0.0    0.0
+ CAF:lvl194_rhPk                   Assembler                  <no location info>                                1203          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2387          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2388          0    0.0    0.0     0.0    0.0
+ CAF:lvl196_rhPm                   Assembler                  <no location info>                                1204          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2389          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2390          0    0.0    0.0     0.0    0.0
+ CAF:lvl198_rhPo                   Assembler                  <no location info>                                1205          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2391          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2392          0    0.0    0.0     0.0    0.0
+ CAF:lvl1_rhK7                     Assembler                  <no location info>                                1095          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2520          0    0.0    0.0     0.0    0.0
+   collectLabel                    Assembler                  src\Assembler.hs:(134,1)-(140,27)                 2521          0    0.0    0.0     0.0    0.0
+    collectLabel.folder            Assembler                  src\Assembler.hs:(136,5)-(139,14)                 2522          0    0.0    0.0     0.0    0.0
+ CAF:lvl200_rhPq                   Assembler                  <no location info>                                1206          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2393          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2394          0    0.0    0.0     0.0    0.0
+ CAF:lvl202_rhPs                   Assembler                  <no location info>                                1207          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2395          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2396          0    0.0    0.0     0.0    0.0
+ CAF:lvl204_rhPu                   Assembler                  <no location info>                                1208          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2397          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2398          0    0.0    0.0     0.0    0.0
+ CAF:lvl206_rhPw                   Assembler                  <no location info>                                1209          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2399          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2400          0    0.0    0.0     0.0    0.0
+ CAF:lvl208_rhPy                   Assembler                  <no location info>                                1210          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2401          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2402          0    0.0    0.0     0.0    0.0
+ CAF:lvl210_rhPA                   Assembler                  <no location info>                                1211          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2403          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2404          0    0.0    0.0     0.0    0.0
+ CAF:lvl212_rhPC                   Assembler                  <no location info>                                1212          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2405          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2406          0    0.0    0.0     0.0    0.0
+ CAF:lvl214_rhPE                   Assembler                  <no location info>                                1213          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2407          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2408          0    0.0    0.0     0.0    0.0
+ CAF:lvl216_rhPG                   Assembler                  <no location info>                                1214          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2409          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2410          0    0.0    0.0     0.0    0.0
+ CAF:lvl218_rhPI                   Assembler                  <no location info>                                1215          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2411          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2412          0    0.0    0.0     0.0    0.0
+ CAF:lvl220_rhPK                   Assembler                  <no location info>                                1216          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2413          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2414          0    0.0    0.0     0.0    0.0
+ CAF:lvl222_rhPM                   Assembler                  <no location info>                                1217          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2415          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2416          0    0.0    0.0     0.0    0.0
+ CAF:lvl224_rhPO                   Assembler                  <no location info>                                1218          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2417          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2418          0    0.0    0.0     0.0    0.0
+ CAF:lvl226_rhPQ                   Assembler                  <no location info>                                1219          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2419          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2420          0    0.0    0.0     0.0    0.0
+ CAF:lvl228_rhPS                   Assembler                  <no location info>                                1220          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2421          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2422          0    0.0    0.0     0.0    0.0
+ CAF:lvl230_rhPU                   Assembler                  <no location info>                                1221          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2423          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2424          0    0.0    0.0     0.0    0.0
+ CAF:lvl233_rhPX                   Assembler                  <no location info>                                1222          0    0.0    0.0     0.0    0.0
+  compCodes                        Assembler                  src\Assembler.hs:(49,1)-(99,7)                    2425          0    0.0    0.0     0.0    0.0
+   compCodes.compMap               Assembler                  src\Assembler.hs:(51,5)-(79,7)                    2426          0    0.0    0.0     0.0    0.0
+ CAF:lvl262_rhQq                   Assembler                  <no location info>                                1251          0    0.0    0.0     0.0    0.0
+  jumpCodes                        Assembler                  src\Assembler.hs:(115,1)-(125,5)                  2598          0    0.0    0.0     0.0    0.0
+ CAF:lvl264_rhQs                   Assembler                  <no location info>                                1252          0    0.0    0.0     0.0    0.0
+  jumpCodes                        Assembler                  src\Assembler.hs:(115,1)-(125,5)                  2428          0    0.0    0.0     0.0    0.0
+ CAF:lvl265_rhQt                   Assembler                  <no location info>                                1253          0    0.0    0.0     0.0    0.0
+  jumpCodes                        Assembler                  src\Assembler.hs:(115,1)-(125,5)                  2630          0    0.0    0.0     0.0    0.0
+ CAF:lvl267_rhQv                   Assembler                  <no location info>                                1254          0    0.0    0.0     0.0    0.0
+  jumpCodes                        Assembler                  src\Assembler.hs:(115,1)-(125,5)                  2429          0    0.0    0.0     0.0    0.0
+ CAF:lvl270_rhQy                   Assembler                  <no location info>                                1256          0    0.0    0.0     0.0    0.0
+  jumpCodes                        Assembler                  src\Assembler.hs:(115,1)-(125,5)                  2430          0    0.0    0.0     0.0    0.0
+ CAF:lvl271_rhQz                   Assembler                  <no location info>                                1257          0    0.0    0.0     0.0    0.0
+  jumpCodes                        Assembler                  src\Assembler.hs:(115,1)-(125,5)                  2617          0    0.0    0.0     0.0    0.0
+ CAF:lvl273_rhQB                   Assembler                  <no location info>                                1258          0    0.0    0.0     0.0    0.0
+  jumpCodes                        Assembler                  src\Assembler.hs:(115,1)-(125,5)                  2431          0    0.0    0.0     0.0    0.0
+ CAF:lvl276_rhQE                   Assembler                  <no location info>                                1260          0    0.0    0.0     0.0    0.0
+  jumpCodes                        Assembler                  src\Assembler.hs:(115,1)-(125,5)                  2432          0    0.0    0.0     0.0    0.0
+ CAF:lvl277_rhQF                   Assembler                  <no location info>                                1261          0    0.0    0.0     0.0    0.0
+  jumpCodes                        Assembler                  src\Assembler.hs:(115,1)-(125,5)                  2613          0    0.0    0.0     0.0    0.0
+ CAF:lvl279_rhQH                   Assembler                  <no location info>                                1262          0    0.0    0.0     0.0    0.0
+  jumpCodes                        Assembler                  src\Assembler.hs:(115,1)-(125,5)                  2433          0    0.0    0.0     0.0    0.0
+ CAF:lvl27_rhKC                    Assembler                  <no location info>                                1107          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2589          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2590          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2591          0    0.0    0.0     0.0    0.0
+     compileC                      Assembler                  src\Assembler.hs:(231,1)-(235,59)                 2592          0    0.0    0.0     0.0    0.0
+ CAF:lvl280_rhQI                   Assembler                  <no location info>                                1263          0    0.0    0.0     0.0    0.0
+  jumpCodes                        Assembler                  src\Assembler.hs:(115,1)-(125,5)                  2616          0    0.0    0.0     0.0    0.0
+ CAF:lvl282_rhQK                   Assembler                  <no location info>                                1264          0    0.0    0.0     0.0    0.0
+  jumpCodes                        Assembler                  src\Assembler.hs:(115,1)-(125,5)                  2434          0    0.0    0.0     0.0    0.0
+ CAF:lvl283_rhQL                   Assembler                  <no location info>                                1265          0    0.0    0.0     0.0    0.0
+  jumpCodes                        Assembler                  src\Assembler.hs:(115,1)-(125,5)                  2606          0    0.0    0.0     0.0    0.0
+ CAF:lvl293_rhQV                   Assembler                  <no location info>                                1267          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2605          0    0.0    0.0     0.0    0.0
+ CAF:lvl295_rhQX                   Assembler                  <no location info>                                1268          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2363          0    0.0    0.0     0.0    0.0
+ CAF:lvl296_rhQY                   Assembler                  <no location info>                                1269          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2602          0    0.0    0.0     0.0    0.0
+ CAF:lvl298_rhR0                   Assembler                  <no location info>                                1270          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2364          0    0.0    0.0     0.0    0.0
+ CAF:lvl299_rhR1                   Assembler                  <no location info>                                1271          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2597          0    0.0    0.0     0.0    0.0
+ CAF:lvl301_rhR3                   Assembler                  <no location info>                                1272          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2365          0    0.0    0.0     0.0    0.0
+ CAF:lvl302_rhR4                   Assembler                  <no location info>                                1273          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2626          0    0.0    0.0     0.0    0.0
+ CAF:lvl304_rhR6                   Assembler                  <no location info>                                1274          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2366          0    0.0    0.0     0.0    0.0
+ CAF:lvl305_rhR7                   Assembler                  <no location info>                                1275          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2610          0    0.0    0.0     0.0    0.0
+ CAF:lvl307_rhR9                   Assembler                  <no location info>                                1276          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2367          0    0.0    0.0     0.0    0.0
+ CAF:lvl308_rhRa                   Assembler                  <no location info>                                1277          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2609          0    0.0    0.0     0.0    0.0
+ CAF:lvl30_rhKG                    Assembler                  <no location info>                                1109          0    0.0    0.0     0.0    0.0
+  parseC'                          Assembler                  src\Assembler.hs:(189,1)-(196,34)                 2321          0    0.0    0.0     0.0    0.0
+   parseC'.go                      Assembler                  src\Assembler.hs:(192,5)-(196,34)                 2322          0    0.0    0.0     0.0    0.0
+    pure                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:163:3-18              2323          1    0.0    0.0     0.0    0.0
+ CAF:lvl310_rhRc                   Assembler                  <no location info>                                1278          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2368          0    0.0    0.0     0.0    0.0
+ CAF:lvl311_rhRd                   Assembler                  <no location info>                                1279          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2637          0    0.0    0.0     0.0    0.0
+ CAF:lvl313_rhRf                   Assembler                  <no location info>                                1280          0    0.0    0.0     0.0    0.0
+  destCodes                        Assembler                  src\Assembler.hs:(102,1)-(112,5)                  2369          0    0.0    0.0     0.0    0.0
+ CAF:lvl7_rhKe                     Assembler                  <no location info>                                1099          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2139          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2140          0    0.0    0.0     0.0    0.0
+ CAF:lvl9_rhKg                     Assembler                  <no location info>                                1100          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2142          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2143          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2144          0    0.0    0.0     0.0    0.0
+ CAF:m1_rhO7                       Assembler                  <no location info>                                1181          0    0.0    0.0     0.0    0.0
+  token                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:315:3-28              2154          1    0.0    0.0     0.0    0.0
+ CAF:m2_rhNF                       Assembler                  <no location info>                                1162          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2475          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2476          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2477          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2478          0    0.0    0.0     0.0    0.0
+      parseA'.letter               Assembler                  src\Assembler.hs:183:5-55                         2479          0    0.0    0.0     0.0    0.0
+       >>=                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2480          1    0.0    0.0     0.0    0.0
+ CAF:main1                         Main                       <no location info>                                1067          0    0.0    0.0     0.0    0.0
+  main                             Main                       app\Main.hs:(9,1)-(15,41)                         2118          1    0.0    0.0     0.0    0.0
+ CAF:main2                         Main                       <no location info>                                1066          0    0.0    0.0     0.0    0.0
+ CAF:p10_rhOy                      Assembler                  <no location info>                                1185          0    0.0    0.0     0.0    0.0
+  parseC'                          Assembler                  src\Assembler.hs:(189,1)-(196,34)                 2279          0    0.0    0.0     0.0    0.0
+   parseC'.go                      Assembler                  src\Assembler.hs:(192,5)-(196,34)                 2280          0    0.0    0.0     0.0    0.0
+    <*                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50              2281          1    0.0    0.0     0.0    0.0
+     >>=                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2282          1    0.0    0.0     0.0    0.0
+ CAF:p1_rhNo                       Assembler                  <no location info>                                1150          0    0.0    0.0     0.0    0.0
+  token                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:315:3-28              2295          1    0.0    0.0     0.0    0.0
+ CAF:p2_rhKl                       Assembler                  <no location info>                                1101          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2228          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2229          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2230          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2231          0    0.0    0.0     0.0    0.0
+      parseA'.(...)                Assembler                  src\Assembler.hs:180:17-102                       2232          0    0.0    0.0     0.0    0.0
+       eof                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:314:3-26              2233          1    0.0    0.0     0.0    0.0
+ CAF:p3_rhNx                       Assembler                  <no location info>                                1156          0    0.0    0.0     0.0    0.0
+  token                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:315:3-28              2501          1    0.0    0.0     0.0    0.0
+ CAF:p4_rhNz                       Assembler                  <no location info>                                1157          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2466          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2467          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2468          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2469          0    0.0    0.0     0.0    0.0
+      parseA'.letter               Assembler                  src\Assembler.hs:183:5-55                         2470          0    0.0    0.0     0.0    0.0
+       label                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:308:3-28              2471          1    0.0    0.0     0.0    0.0
+ CAF:p5_rhNA                       Assembler                  <no location info>                                1158          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2495          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2496          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2497          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2498          0    0.0    0.0     0.0    0.0
+      parseA'.letter               Assembler                  src\Assembler.hs:183:5-55                         2499          0    0.0    0.0     0.0    0.0
+       label                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:308:3-28              2500          1    0.0    0.0     0.0    0.0
+ CAF:p6_rhNB                       Assembler                  <no location info>                                1159          0    0.0    0.0     0.0    0.0
+  <|>                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16              2462          1    0.0    0.0     0.0    0.0
+   mplus                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:260:3-15              2463          1    0.0    0.0     0.0    0.0
+ CAF:p7_rhNZ                       Assembler                  <no location info>                                1176          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2178          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2179          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2180          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2181          0    0.0    0.0     0.0    0.0
+      parseA'.(...)                Assembler                  src\Assembler.hs:180:17-102                       2182          0    0.0    0.0     0.0    0.0
+ CAF:p8_rhO0                       Assembler                  <no location info>                                1177          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2169          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2170          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2171          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2172          0    0.0    0.0     0.0    0.0
+      parseA'.(...)                Assembler                  src\Assembler.hs:180:17-102                       2173          0    0.0    0.0     0.0    0.0
+       <*                          Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50              2174          1    0.0    0.0     0.0    0.0
+        >>=                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2175          1    0.0    0.0     0.0    0.0
+ CAF:p9_rhOx                       Assembler                  <no location info>                                1184          0    0.0    0.0     0.0    0.0
+  takeWhile1P                      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:318:3-34              2285          1    0.0    0.0     0.0    0.0
+ CAF:p_rhNv                        Assembler                  <no location info>                                1155          0    0.0    0.0     0.0    0.0
+  token                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:315:3-28              2472          1    0.0    0.0     0.0    0.0
+ CAF:parse                         Text.Megaparsec            Text\Megaparsec.hs:178:1-5                        1285          0    0.0    0.0     0.0    0.0
+  parse                            Text.Megaparsec            Text\Megaparsec.hs:178:1-17                       2147          1    0.0    0.0     0.0    0.0
+ CAF:parseC'_r4Ak                  Assembler                  src\Assembler.hs:189:1-7                          1195          0    0.0    0.0     0.0    0.0
+  parseC'                          Assembler                  src\Assembler.hs:(189,1)-(196,34)                 2252          1    0.0    0.0     0.0    0.0
+ CAF:shouldIgnore_rhN2             Assembler                  src\Assembler.hs:131:5-16                         1145          0    0.0    0.0     0.0    0.0
+  canonicalize                     Assembler                  src\Assembler.hs:(128,1)-(131,56)                 2126          0    0.0    0.0     0.0    0.0
+   canonicalize.shouldIgnore       Assembler                  src\Assembler.hs:131:5-56                         2127          1    0.0    0.0     0.0    0.0
+ CAF:spc_rhNX                      Assembler                  <no location info>                                1174          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2208          0    0.0    0.0     0.0    0.0
+   compile.folder                  Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2209          0    0.0    0.0     0.0    0.0
+    compile.folder.res             Assembler                  src\Assembler.hs:255:15-103                       2210          0    0.0    0.0     0.0    0.0
+     parseA'                       Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2211          0    0.0    0.0     0.0    0.0
+      parseA'.integer              Assembler                  src\Assembler.hs:182:5-56                         2212          0    0.0    0.0     0.0    0.0
+ CAF:str_rhKE                      Assembler                  <no location info>                                1108          0    0.0    0.0     0.0    0.0
+ CAF:strip1_rhMY                   Assembler                  src\Assembler.hs:130:5-9                          1142          0    0.0    0.0     0.0    0.0
+  canonicalize                     Assembler                  src\Assembler.hs:(128,1)-(131,56)                 2129          0    0.0    0.0     0.0    0.0
+   canonicalize.strip              Assembler                  src\Assembler.hs:130:5-42                         2130          1    0.0    0.0     0.0    0.0
+ CAF:strip_rhKd                    Assembler                  src\Assembler.hs:140:5-9                          1098          0    0.0    0.0     0.0    0.0
+  compile                          Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2523          0    0.0    0.0     0.0    0.0
+   collectLabel                    Assembler                  src\Assembler.hs:(134,1)-(140,27)                 2524          0    0.0    0.0     0.0    0.0
+    collectLabel.strip             Assembler                  src\Assembler.hs:140:5-27                         2525          1    0.0    0.0     0.0    0.0
+ main                              Main                       app\Main.hs:(9,1)-(15,41)                         2119          0   10.3    0.5   100.0  100.0
+  readTextDevice                   Data.Text.Internal.IO      libraries\text\Data\Text\Internal\IO.hs:133:39-64 2120         94    0.0    0.0     0.0    0.0
+  main.dat                         Main                       app\Main.hs:13:9-30                               2121          1    0.0    0.0    89.7   99.4
+   compile                         Assembler                  src\Assembler.hs:(238,1)-(256,61)                 2122          1    1.0    1.6    89.7   99.4
+    compile.folder                 Assembler                  src\Assembler.hs:(251,5)-(256,61)                 2138      28365    5.1    5.6    82.6   86.4
+     output                        Assembler                  src\Assembler.hs:42:5-10                          2581      54966    0.0    0.0     0.0    0.0
+     compile.folder.res            Assembler                  src\Assembler.hs:255:15-103                       2141      27483    1.0    2.1    77.4   80.8
+      compileC                     Assembler                  src\Assembler.hs:(231,1)-(235,59)                 2361      17991    3.6    8.2     3.6    8.2
+      compileA                     Assembler                  src\Assembler.hs:(218,1)-(228,58)                 2251       9492    1.0    0.5     6.7   10.2
+       to16BinString               Assembler                  src\Assembler.hs:(174,1)-(177,56)                 2582       9492    3.1    3.8     4.6    7.3
+        to16BinString.digitToChar  Assembler                  src\Assembler.hs:176:5-53                         2586      26339    1.0    0.2     1.0    0.2
+        to16BinString.padZero16    Assembler                  src\Assembler.hs:177:5-56                         2587       9492    0.0    0.0     0.5    3.3
+         to16BinString.padZero16.\ Assembler                  src\Assembler.hs:177:23-56                        2588       9492    0.5    3.3     0.5    3.3
+       symbolTable                 Assembler                  src\Assembler.hs:41:5-15                          2517       7357    0.0    0.0     0.0    0.0
+       allocatedAddr               Assembler                  src\Assembler.hs:43:5-17                          2627         37    0.0    0.0     0.0    0.0
+       compileC                    Assembler                  src\Assembler.hs:(231,1)-(235,59)                 2599          0    1.0    2.4     1.0    2.4
+      parseA'                      Assembler                  src\Assembler.hs:(180,1)-(183,55)                 2145       9492    1.0    0.0    24.1   21.5
+       parseA'.(...)               Assembler                  src\Assembler.hs:180:17-102                       2146       9492    1.5    0.5     4.6    4.1
+        unParser                   Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2168      26326    0.0    0.0     0.0    0.0
+        runParser                  Text.Megaparsec            Text\Megaparsec.hs:223:1-61                       2148       9492    0.5    0.5     3.1    2.9
+         initialState              Text.Megaparsec            Text\Megaparsec.hs:(279,1)-(290,3)                2155       9492    0.0    0.0     0.0    0.0
+         runParser'                Text.Megaparsec            Text\Megaparsec.hs:236:1-42                       2149       9492    0.5    0.3     2.6    2.5
+          runParserT'              Text.Megaparsec            Text\Megaparsec.hs:(261,1)-(274,54)               2150       9492    0.0    0.0     2.1    2.2
+           runParsecT              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:(591,1)-(596,56)      2151       9492    1.5    1.1     2.1    2.2
+            unParser               Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2152      28476    0.0    0.0     0.0    0.0
+            <|>                    Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16              2160          0    0.5    0.3     0.5    0.3
+             unParser              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2161       9493    0.0    0.0     0.0    0.0
+            take1_                 Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:270:3-19                2157          0    0.0    0.8     0.0    0.8
+           stateParseErrors        Text.Megaparsec.State      Text\Megaparsec\State.hs:48:5-20                  2249       9492    0.0    0.0     0.0    0.0
+        <*                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50              2176          0    0.0    0.4     0.0    0.4
+         unParser                  Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2177      11641    0.0    0.0     0.0    0.0
+         >>=                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2437          0    0.0    0.0     0.0    0.0
+          unParser                 Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2438          1    0.0    0.0     0.0    0.0
+          decimal                  Text.Megaparsec.Char.Lexer Text\Megaparsec\Char\Lexer.hs:336:1-32            2439          0    0.0    0.0     0.0    0.0
+           unParser                Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2440          2    0.0    0.0     0.0    0.0
+           chunkEmpty              Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:269:3-27                2442          1    0.0    0.0     0.0    0.0
+           runParser               Text.Megaparsec            Text\Megaparsec.hs:223:1-61                       2443          0    0.0    0.0     0.0    0.0
+            runParser'             Text.Megaparsec            Text\Megaparsec.hs:236:1-42                       2444          0    0.0    0.0     0.0    0.0
+             runParserT'           Text.Megaparsec            Text\Megaparsec.hs:(261,1)-(274,54)               2445          0    0.0    0.0     0.0    0.0
+              runParsecT           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:(591,1)-(596,56)      2446          0    0.0    0.0     0.0    0.0
+               <|>                 Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16              2447          0    0.0    0.0     0.0    0.0
+                unParser           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2448          1    0.0    0.0     0.0    0.0
+           takeWhile_              Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:275:3-21                2441          0    0.0    0.0     0.0    0.0
+         parseA'.integer           Assembler                  src\Assembler.hs:182:5-56                         2435          0    0.0    0.0     0.0    0.0
+          lexeme                   Text.Megaparsec.Lexer      Text\Megaparsec\Lexer.hs:78:1-23                  2436          0    0.0    0.0     0.0    0.0
+        eof                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:314:3-26              2234          0    0.0    0.0     0.0    0.2
+         <*                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50              2237          0    0.0    0.2     0.0    0.2
+          unParser                 Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2240       2148    0.0    0.0     0.0    0.0
+          parseA'.integer          Assembler                  src\Assembler.hs:182:5-56                         2238          0    0.0    0.0     0.0    0.0
+           lexeme                  Text.Megaparsec.Lexer      Text\Megaparsec\Lexer.hs:78:1-23                  2239          0    0.0    0.0     0.0    0.0
+          return                   Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:193:3-15              2241          0    0.0    0.0     0.0    0.0
+           parseA'.integer         Assembler                  src\Assembler.hs:182:5-56                         2242          0    0.0    0.0     0.0    0.0
+            lexeme                 Text.Megaparsec.Lexer      Text\Megaparsec\Lexer.hs:78:1-23                  2243          0    0.0    0.0     0.0    0.0
+          runParser                Text.Megaparsec            Text\Megaparsec.hs:223:1-61                       2244          0    0.0    0.0     0.0    0.1
+           runParser'              Text.Megaparsec            Text\Megaparsec.hs:236:1-42                       2245          0    0.0    0.0     0.0    0.1
+            runParserT'            Text.Megaparsec            Text\Megaparsec.hs:(261,1)-(274,54)               2246          0    0.0    0.0     0.0    0.1
+             runParsecT            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:(591,1)-(596,56)      2247          0    0.0    0.0     0.0    0.1
+              runParsecT.cok       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:593:5-51              2248       2148    0.0    0.1     0.0    0.1
+       parseA'.n                   Assembler                  src\Assembler.hs:180:17-102                       2250       9492    0.0    0.0     0.0    0.0
+       parseA'.integer             Assembler                  src\Assembler.hs:182:5-56                         2192          0    0.5    0.2     5.1    4.5
+        chunkEmpty                 Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:269:3-27                2217       2148    0.0    0.0     0.0    0.0
+        chunkLength                Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:268:3-30                2235       2148    0.0    0.0     0.0    0.0
+        unParser                   Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2213       2148    0.0    0.0     0.0    0.0
+        lexeme                     Text.Megaparsec.Lexer      Text\Megaparsec\Lexer.hs:78:1-23                  2193          0    0.0    0.0     4.6    4.2
+         <*                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50              2194          0    1.0    0.5     4.6    4.2
+          unParser                 Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2207       6444    0.0    0.0     0.0    0.0
+          >>=                      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2195       4296    0.0    0.5     3.6    3.7
+           unParser                Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2196       9491    0.0    0.0     0.0    0.0
+           decimal                 Text.Megaparsec.Char.Lexer Text\Megaparsec\Char\Lexer.hs:336:1-32            2199          0    0.5    1.4     3.6    3.2
+            unParser               Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2200      25426    0.0    0.0     0.0    0.0
+            chunkEmpty             Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:269:3-27                2206       9491    0.0    0.0     0.0    0.0
+            chunkLength            Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:268:3-30                2215       2148    0.0    0.0     0.0    0.0
+            chunkToTokens          Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:267:3-32                2585          0    0.5    0.2     0.5    0.2
+            parseA'.(...)          Assembler                  src\Assembler.hs:180:17-102                       2571          0    0.0    0.0     0.5    0.3
+             runParser             Text.Megaparsec            Text\Megaparsec.hs:223:1-61                       2572          0    0.0    0.0     0.5    0.3
+              runParser'           Text.Megaparsec            Text\Megaparsec.hs:236:1-42                       2573          0    0.0    0.0     0.5    0.3
+               runParserT'         Text.Megaparsec            Text\Megaparsec.hs:(261,1)-(274,54)               2574          0    0.0    0.0     0.5    0.3
+                runParsecT         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:(591,1)-(596,56)      2575          0    0.0    0.0     0.5    0.3
+                 <|>               Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16              2576          0    0.5    0.3     0.5    0.3
+                  unParser         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2577       7343    0.0    0.0     0.0    0.0
+            return                 Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:193:3-15              2220          0    0.0    0.1     0.0    0.2
+             parseA'.(...)         Assembler                  src\Assembler.hs:180:17-102                       2221          0    0.0    0.1     0.0    0.1
+            takeWhile_             Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:275:3-21                2205          0    2.1    1.1     2.1    1.1
+          return                   Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:193:3-15              2218       4296    0.0    0.0     0.0    0.0
+           pure                    Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:163:3-18              2219       4296    0.0    0.0     0.0    0.0
+        takeWhile_                 Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:275:3-21                2216          0    0.0    0.1     0.0    0.1
+       parseA'.letter              Assembler                  src\Assembler.hs:183:5-55                         2459          0    8.2    6.8    13.3   13.0
+        unParser                   Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2460     119022    0.0    0.0     0.0    0.0
+        >>=                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2474      20131    0.0    0.0     0.0    0.0
+        return                     Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:193:3-15              2578       7343    0.0    0.0     0.0    0.0
+         pure                      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:163:3-18              2579       7343    0.0    0.0     0.0    0.0
+        <|>                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16              2464          0    1.0    2.6     3.1    4.3
+         unParser                  Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2465      71424    0.0    0.0     0.0    0.0
+         return                    Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:193:3-15              2508       7345    0.5    1.2     2.1    1.7
+          pure                     Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:163:3-18              2509       7345    0.0    0.0     0.0    0.0
+          unParser                 Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2510       7344    0.0    0.0     0.0    0.0
+          parseA'.(...)            Assembler                  src\Assembler.hs:180:17-102                       2511          0    0.0    0.3     1.5    0.5
+           runParser               Text.Megaparsec            Text\Megaparsec.hs:223:1-61                       2512          0    0.0    0.0     1.5    0.2
+            runParser'             Text.Megaparsec            Text\Megaparsec.hs:236:1-42                       2513          0    0.0    0.0     1.5    0.2
+             runParserT'           Text.Megaparsec            Text\Megaparsec.hs:(261,1)-(274,54)               2514          0    0.0    0.0     1.5    0.2
+              runParsecT           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:(591,1)-(596,56)      2515          0    0.0    0.0     1.5    0.2
+               runParsecT.cok      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:593:5-51              2516       7344    1.5    0.2     1.5    0.2
+         >>=                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2494          1    0.0    0.0     0.0    0.0
+         take1_                    Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:270:3-19                2493          0    0.0    0.0     0.0    0.0
+        take1_                     Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:270:3-19                2473          0    2.1    2.0     2.1    2.0
+      parseC'                      Assembler                  src\Assembler.hs:(189,1)-(196,34)                 2253          0    0.0    0.0    42.1   38.8
+       parseMaybe                  Text.Megaparsec            Text\Megaparsec.hs:(191,1)-(194,21)               2254      17991    0.5    0.0     8.2    6.8
+        runParser                  Text.Megaparsec            Text\Megaparsec.hs:223:1-61                       2255      17991    0.5    0.9     1.0    2.1
+         initialState              Text.Megaparsec            Text\Megaparsec.hs:(279,1)-(290,3)                2286      17991    0.0    0.0     0.0    0.0
+         runParser'                Text.Megaparsec            Text\Megaparsec.hs:236:1-42                       2256      17991    0.5    0.6     0.5    1.1
+          runParserT'              Text.Megaparsec            Text\Megaparsec.hs:(261,1)-(274,54)               2257      17991    0.0    0.0     0.0    0.6
+           runParsecT              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:(591,1)-(596,56)      2258      17991    0.0    0.6     0.0    0.6
+            unParser               Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2259      17991    0.0    0.0     0.0    0.0
+           stateParseErrors        Text.Megaparsec.State      Text\Megaparsec\State.hs:48:5-20                  2360      17991    0.0    0.0     0.0    0.0
+        <*                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50              2264          0    1.5    1.5     3.6    2.6
+         >>=                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2265      17991    1.5    1.1     1.5    1.1
+          unParser                 Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2266      17991    0.0    0.0     0.0    0.0
+         return                    Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:193:3-15              2349      17991    0.5    0.0     0.5    0.0
+          pure                     Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:163:3-18              2350      17991    0.0    0.0     0.0    0.0
+         unParser                  Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2337      17991    0.0    0.0     0.0    0.0
+        eof                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:314:3-26              2341          0    0.5    0.0     3.1    2.1
+         <*                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50              2344          0    1.0    0.6     2.6    2.1
+          >>=                      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2347          0    0.0    0.8     1.5    1.5
+           unParser                Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2348      17991    0.0    0.0     0.0    0.0
+           return                  Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:193:3-15              2352          0    0.5    0.3     0.5    0.3
+            parseC'.go             Assembler                  src\Assembler.hs:(192,5)-(196,34)                 2353          0    0.0    0.0     0.0    0.0
+             <|>                   Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16              2354          0    0.0    0.0     0.0    0.0
+           runParser               Text.Megaparsec            Text\Megaparsec.hs:223:1-61                       2355          0    0.0    0.0     1.0    0.4
+            runParser'             Text.Megaparsec            Text\Megaparsec.hs:236:1-42                       2356          0    0.0    0.0     1.0    0.4
+             runParserT'           Text.Megaparsec            Text\Megaparsec.hs:(261,1)-(274,54)               2357          0    0.0    0.0     1.0    0.4
+              runParsecT           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:(591,1)-(596,56)      2358          0    0.0    0.0     1.0    0.4
+               runParsecT.cok      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:593:5-51              2359      17991    1.0    0.4     1.0    0.4
+          parseC'.go               Assembler                  src\Assembler.hs:(192,5)-(196,34)                 2345          0    0.0    0.0     0.0    0.0
+           <|>                     Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16              2346          0    0.0    0.0     0.0    0.0
+       parseC'.go                  Assembler                  src\Assembler.hs:(192,5)-(196,34)                 2270          0    4.6    1.7    33.8   32.0
+        unParser                   Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2271      53973    0.0    0.0     0.0    0.0
+        <*                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50              2283          0    9.2    6.8    18.5   20.9
+         unParser                  Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2284     107060    0.0    0.0     0.0    0.0
+         >>=                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2291      36868    3.1    3.5     5.1    7.1
+          unParser                 Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2306      56631    0.0    0.0     0.0    0.0
+          chunkEmpty               Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:269:3-27                2311      17991    0.5    0.0     0.5    0.0
+          chunkLength              Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:268:3-30                2319      17991    0.0    0.1     0.0    0.1
+          return                   Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:193:3-15              2560        886    0.0    0.0     0.5    0.4
+           pure                    Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:163:3-18              2567        886    0.0    0.0     0.0    0.0
+           <|>                     Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16              2561          0    0.0    0.2     0.5    0.3
+            unParser               Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2562       2658    0.0    0.0     0.0    0.0
+            chunkEmpty             Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:269:3-27                2566        886    0.0    0.0     0.0    0.0
+            chunkLength            Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:268:3-30                2570        886    0.0    0.0     0.0    0.0
+            parseMaybe             Text.Megaparsec            Text\Megaparsec.hs:(191,1)-(194,21)               2568          0    0.0    0.0     0.0    0.0
+            takeWhile_             Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:275:3-21                2563          0    0.5    0.2     0.5    0.2
+          parseMaybe               Text.Megaparsec            Text\Megaparsec.hs:(191,1)-(194,21)               2569          0    0.0    0.0     0.0    0.0
+          takeWhile_               Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:275:3-21                2308          0    1.0    3.1     1.0    3.1
+         return                    Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:193:3-15              2298      35096    2.6    1.6     2.6    1.6
+          pure                     Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:163:3-18              2299      35096    0.0    0.0     0.0    0.0
+          unParser                 Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2300      34210    0.0    0.0     0.0    0.0
+          >>=                      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2301      17105    0.0    0.0     0.0    0.0
+         chunkEmpty                Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:269:3-27                2290      17991    0.0    0.0     0.0    0.0
+         chunkLength               Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:268:3-30                2296      17991    0.0    0.1     0.0    0.1
+         <|>                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16              2554          0    0.0    0.1     0.0    0.1
+          unParser                 Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2555       2658    0.0    0.0     0.0    0.0
+          >>=                      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2559        886    0.0    0.0     0.0    0.0
+         take1_                    Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:270:3-19                2297          0    0.5    1.4     0.5    1.4
+         takeWhile_                Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:275:3-21                2287          0    1.0    3.7     1.0    3.7
+        <|>                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:188:3-16              2274          0    3.6    2.1    10.8    9.3
+         unParser                  Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2275      53087    0.0    0.0     0.0    0.0
+         <*                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:166:3-50              2324          0    1.0    0.5     7.2    7.2
+          return                   Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:193:3-15              2327      17105    3.6    3.3     4.6    4.4
+           unParser                Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2329      51315    0.0    0.0     0.0    0.0
+           >>=                     Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2330      17105    0.0    0.0     0.0    0.0
+           chunkEmpty              Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:269:3-27                2333      17105    0.0    0.0     0.0    0.0
+           chunkLength             Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:268:3-30                2342      17105    0.5    0.1     0.5    0.1
+           pure                    Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:163:3-18              2334      17105    0.0    0.0     0.0    0.0
+           parseMaybe              Text.Megaparsec            Text\Megaparsec.hs:(191,1)-(194,21)               2335          0    0.0    0.0     0.0    0.0
+           takeWhile_              Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:275:3-21                2332          0    0.5    1.0     0.5    1.0
+          >>=                      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:194:3-16              2325          0    1.0    2.0     1.5    2.3
+           unParser                Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:120:5-12              2326      51315    0.0    0.0     0.0    0.0
+           parseMaybe              Text.Megaparsec            Text\Megaparsec.hs:(191,1)-(194,21)               2336          0    0.0    0.0     0.0    0.0
+           return                  Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:193:3-15              2328          0    0.5    0.3     0.5    0.3
+        take1_                     Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:270:3-19                2320          0    0.0    0.1     0.0    0.1
+    collectLabel                   Assembler                  src\Assembler.hs:(134,1)-(140,27)                 2518          1    0.0    0.2     3.6    3.5
+     collectLabel.folder           Assembler                  src\Assembler.hs:(136,5)-(139,14)                 2519      28365    3.1    2.6     3.1    2.6
+     collectLabel.strip            Assembler                  src\Assembler.hs:140:5-27                         2526          0    0.5    0.6     0.5    0.6
+    compile.src                    Assembler                  src\Assembler.hs:250:5-34                         2123          1    1.0    4.1     2.6    7.9
+     canonicalize                  Assembler                  src\Assembler.hs:(128,1)-(131,56)                 2125          0    0.5    1.0     1.5    3.8
+      canonicalize.shouldIgnore    Assembler                  src\Assembler.hs:131:5-56                         2128          0    1.0    2.4     1.0    2.4
+      canonicalize.strip           Assembler                  src\Assembler.hs:130:5-42                         2131          0    0.0    0.5     0.0    0.5
+    output                         Assembler                  src\Assembler.hs:42:5-10                          2580          1    0.0    0.0     0.0    0.0
